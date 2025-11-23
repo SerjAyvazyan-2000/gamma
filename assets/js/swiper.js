@@ -3,7 +3,10 @@ const heroSwiper = new Swiper(".hero-swiper", {
   slidesPerView: 2.1,
   direction: "vertical",
   speed: 700,
+  autoplay:true,
   loop: true,
+autoHeight: true,
+ 
 
     pagination: {
     el: ".hero-pagination",
@@ -17,6 +20,8 @@ const heroSwiper = new Swiper(".hero-swiper", {
     320: {
       slidesPerView: 1,
       direction: "horizontal",
+
+  initialSlide: 1, 
     },
 
     750: {
@@ -40,6 +45,9 @@ setTimeout(() => {
     heroSwiper.translateTo(-third, 400);
   }
 }, 100);
+
+
+
 
 const reviewsSwiper = new Swiper(".reviews-swiper", {
   spaceBetween: 10,

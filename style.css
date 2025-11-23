@@ -247,6 +247,9 @@ main {
 .text-blue {
   color: #1252d3;
 }
+.text-blue-desktop {
+  color: #1252d3;
+}
 .btn-primary {
   background: #1252d3;
   padding: 4px 24px 4px 4px;
@@ -352,6 +355,9 @@ header {
   z-index: 2;
   position: relative;
 }
+.header-logo{
+  display: flex;
+}
 .header-actions {
   gap: 12px;
 }
@@ -424,7 +430,7 @@ header {
   position: absolute;
   max-width: 160px;
   width: 100%;
-  top: -81px;
+  top: -61px;
   left: 200px;
   transform: rotate(16deg);
 }
@@ -506,6 +512,11 @@ header {
   border-radius: 15px;
   gap: 40px;
   height: max-content;
+  transition: .4s;
+  cursor: pointer;
+}
+.universal-item:hover{
+  transform: scale(1.03);
 }
 .universal-item-img {
   max-width: 213px;
@@ -831,7 +842,7 @@ header {
 }
 
 .trust-body {
-  min-height: 730px;
+  min-height: 660px;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -982,6 +993,13 @@ footer {
   .header-logo {
     max-width: 92px;
   }
+  .text-blue-desktop{
+    color: unset;
+  }
+  .text-blue-mobile{
+    color: #1252D3;
+
+  }
   .btn-login {
     padding: 11px 12px;
     font-size: 14px;
@@ -1013,7 +1031,7 @@ footer {
     padding: 0 0 18px 0;
   }
   .hero-slide-book {
-    max-width: 264px;
+    max-width: 304px;
     left: -60px;
     top: -30px;
   }
@@ -1024,10 +1042,12 @@ footer {
     left: 150px;
     bottom: unset;
     top: 40px;
+    display: none;
   }
   .hero-slide-cursor {
     left: 150px;
     top: 132px;
+    display: none;
   }
   .hero-pagination {
     display: flex !important;
@@ -1123,14 +1143,15 @@ footer {
   }
   .universal-item-texts{
     max-width: 276px;
-    
+
   }
 }
 
 @media (max-width: 500px) {
   .hero-slide-gif {
-    left: 70px;
-    max-width: 281px;
+       max-width: 211px;
+        left: 90px;
+        object-fit: cover;
   }
   .hero-slide-cursor {
     left: 170px;
@@ -1145,14 +1166,34 @@ footer {
   }
   .hero-slide-gif {
     max-width: 221px;
+        left: 90px;
+        top: 30px;
   }
   .hero-slide-cursor {
-    left: 180px;
+            left: 200px;
     top: 132px;
   }
     .trust-body {
     min-height: 370px;
   }
+    .hero-slide-book {
+    max-width: 285px;
+
+  }
 }
-@media (max-width: 460px) {
+@media (max-width: 420px) {
+    .hero-slide-book {
+    max-width: 274px;
+
+  }
+    .hero-slide-gif {
+        top: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+    .hero-slide-book {
+    max-width: 254px;
+
+  }
 }
