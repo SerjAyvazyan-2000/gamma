@@ -1,51 +1,3 @@
-const heroSwiper = new Swiper(".hero-swiper", {
-  spaceBetween: 30,
-  slidesPerView: 2.1,
-  direction: "vertical",
-  speed: 700,
-  autoplay:true,
-  loop: true,
-autoHeight: true,
- 
-
-    pagination: {
-    el: ".hero-pagination",
-    clickable:true,
-  },
-
-  breakpoints: {
-    0: {
-      slidesPerView: 1.2,
-    },
-    320: {
-      slidesPerView: 1,
-      direction: "horizontal",
-
-  initialSlide: 1, 
-    },
-
-    750: {
-      slidesPerView: 1.3,
-      direction: "horizontal",
-    },
-
-    927: {
-      slidesPerView: 1.6,
-      direction: "horizontal",
-    },
-    1062: {
-      slidesPerView: 2.1,
-    },
-  },
-});
-
-setTimeout(() => {
-  if (window.innerWidth > 1062) {
-    const third = heroSwiper.width / 3;
-    heroSwiper.translateTo(-third, 400);
-  }
-}, 100);
-
 
 
 
@@ -56,7 +8,7 @@ const reviewsSwiper = new Swiper(".reviews-swiper", {
 
   pagination: {
     el: ".reviews-pagination",
-     clickable:true,
+    clickable: true,
   },
 
   navigation: {
@@ -91,3 +43,64 @@ buttons.forEach((btn) => {
     }, 150);
   });
 });
+
+
+
+function initSplide() {
+  let direction = window.innerWidth < 1062 ? "ltr" : "ttb";
+
+  const splide = new Splide(".splide", {
+    type: "loop",
+    direction: direction,
+    height: direction === "ttb" ? "325px" : "",
+    focus: "center",
+    wheel: false,
+    speed: 1200,
+    perPage: 1,
+    gap: "20px",
+    pagination: true,
+ start:1,
+
+     breakpoints: {
+    1061: {
+      direction: "horizontal",
+      height: "",
+      perPage: 2,
+      start:1,
+      
+    },
+    927: {
+      direction: "horizontal",
+      perPage: 2,
+    },
+    750: {
+      direction: "horizontal",
+      perPage:1,
+      gap: "30px",
+    },
+    320: {
+      direction: "horizontal",
+      perPage: 1,
+    },
+    0: {
+      direction: "horizontal",
+      perPage: 1.2,
+    },
+  },
+
+
+  });
+
+  splide.mount();
+
+  let interval = setInterval(() => {
+    if (direction === "ttb") {
+      splide.go(">"); 
+    } 
+  }, 3500);
+
+
+}
+
+initSplide();
+
