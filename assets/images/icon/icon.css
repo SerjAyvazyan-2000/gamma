@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+.icon-star {
+  mask-image: url(star.svg);
+  -webkit-mask-image: url(star.svg);
+}
+.icon-file {
+  mask-image: url(file.svg);
+  -webkit-mask-image: url(file.svg);
+}
